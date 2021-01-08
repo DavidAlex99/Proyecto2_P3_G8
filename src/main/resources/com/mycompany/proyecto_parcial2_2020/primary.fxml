@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
@@ -8,27 +9,25 @@
 
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
-   <top>
-      <Label text="MENU PRINCIPAL" BorderPane.alignment="CENTER">
-         <font>
-            <Font size="41.0" />
-         </font>
-      </Label>
-   </top>
    <center>
-      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" BorderPane.alignment="CENTER">
+      <VBox fx:id="bntNuevoJuego" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" text="Opciones Disponibles">
+            <Button mnemonicParsing="false" text="Nuevo Juego">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" text="Reporte ">
+            <Button fx:id="btnOpciones" mnemonicParsing="false" text="Opciones Disponibles">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" text="Configuraciones">
+            <Button fx:id="btnReporte" mnemonicParsing="false" text="Reporte ">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnConfiguraciones" mnemonicParsing="false" text="Configuraciones">
                <font>
                   <Font size="18.0" />
                </font>
@@ -36,4 +35,14 @@
          </children>
       </VBox>
    </center>
+   <top>
+      <Label text="La Loteria" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="System Italic" size="36.0" />
+         </font>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </Label>
+   </top>
 </BorderPane>
