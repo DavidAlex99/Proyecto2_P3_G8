@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.proyecto_parcial2_2020.ConfiguracionesController">
+   <children>
+      <Label layoutX="174.0" layoutY="46.0" text="CONFIGURACIONES" textAlignment="CENTER">
+         <font>
+            <Font name="Berlin Sans FB" size="29.0" />
+         </font>
+      </Label>
+      <Label layoutX="90.0" layoutY="118.0" text="CANTIDAD OPONENTES">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="chCantidad" layoutX="300.0" layoutY="116.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="chVisibilidad" layoutX="300.0" layoutY="181.0" prefWidth="150.0" />
+      <Button fx:id="btAceptar" layoutX="149.0" layoutY="287.0" mnemonicParsing="false" onAction="#botonAceptar" text="ACEPTAR" AnchorPane.bottomAnchor="42.0" AnchorPane.leftAnchor="149.0" AnchorPane.rightAnchor="379.0" AnchorPane.topAnchor="287.0">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="btCancelar" layoutX="259.0" layoutY="288.0" mnemonicParsing="false" onAction="#botonCancelar" text="CANCELAR">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="btRegresar" layoutX="375.0" layoutY="288.0" mnemonicParsing="false" onAction="#botonRegresar" text="REGRESAR">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Label layoutX="171.0" layoutY="183.0" text="VISIBILIDAD">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
