@@ -1,23 +1,57 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.mycompany.proyecto_parcial2_2020;
 
-import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
+import javafx.fxml.Initializable;
 
-public class PrimaryController {
+
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+/**
+ * FXML Controller class
+ *
+ * @author PC
+ */
+public class PrimaryController implements Initializable {
+
+
     @FXML
-    private Button btnOpciones;
+    private Label lbLoteria;
     @FXML
-    private Button btnCofiguraciones;
+    private Button btnNuevoJuego;
     @FXML
     private Button btnReporte;
     @FXML
-    private Button btnuevoJuego;
+    private Button btnConfiguraciones;
+    /**
+     * Initializes the controller class.
+     */
+    public void initialize() {
+        // TODO
+    }    
+    
+    @FXML
+    private void nuevoJuego(ActionEvent event) {
+    }
 
     @FXML
-    private void switchToSecondary() throws IOException {
-        App.setRoot("secondary");
+    private void reporte(ActionEvent event) {
     }
-    
-    //hacer metodos para hacer switch a las ventanas de configuracioes, reporte etc
+
+    @FXML
+    private void configuraciones(ActionEvent event) {
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }
