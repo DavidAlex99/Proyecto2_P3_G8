@@ -1,0 +1,29 @@
+[33mcommit 3d2d33428b2921c66cbcb0996009ba52936148e9[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: IsaacVas20 <ivasco@espol.edu.ec>
+Date:   Sun Jan 10 14:39:35 2021 -0500
+
+    Correccion Ventana Principal
+
+[33mcommit d2c9ba837a76e30854c367bf849de7ed9e9ef7cd[m
+Author: IsaacVas20 <ivasco@espol.edu.ec>
+Date:   Sat Jan 9 20:33:31 2021 -0500
+
+    Creacion ventanas: Configuracion y Reporte
+
+[33mcommit 367f794608dfeca990c35efa9c78716f8a34a3a1[m
+Author: LAPTOP-7CC4H83O\alexx <daalrive@espol.edu.ec>
+Date:   Thu Jan 7 21:03:22 2021 -0500
+
+    agregacion de los controladores en el controlador
+
+[33mcommit 2596926fff94b0ba5b2e639b90a5afedf7055aab[m
+Author: LAPTOP-7CC4H83O\alexx <daalrive@espol.edu.ec>
+Date:   Thu Jan 7 20:28:57 2021 -0500
+
+    agregado la pantalla principal
+
+[33mcommit 25a6522d29a1b18518cbe3456792313a70cc9a6b[m
+Author: LAPTOP-7CC4H83O\alexx <daalrive@espol.edu.ec>
+Date:   Wed Jan 6 15:33:24 2021 -0500
+
+    creacion del repositorio
