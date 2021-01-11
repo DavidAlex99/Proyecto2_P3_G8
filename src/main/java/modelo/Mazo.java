@@ -5,10 +5,25 @@
  */
 package modelo;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author cholo
  */
 public class Mazo {
+    private ArrayList<Carta> cartas;
     
+    public Mazo(ArrayList<Carta> cartas){
+        this.cartas = new ArrayList<>();
+    }
+    public ArrayList<Carta> getCartas(){
+        return cartas;
+    }
+    
+    public void barajar(){
+    }
+    
+    public void mostrarCarta(){
+    }
 }

@@ -10,5 +10,21 @@ package modelo;
  * @author cholo
  */
 public class CartaJuego {
+    private Carta carta;
+    private boolean marcada;
     
+    public CartaJuego(Carta carta, boolean marcada){
+        this.carta = carta;
+        this.marcada = marcada;
+    }
+    public Carta getCarta(){
+        return carta;
+    }
+    public boolean getMarcada(){
+        return marcada;
+    }
+    
+    public void marcarCarta(){
+        //COMPLETAR METODO!!!
+    }
 }

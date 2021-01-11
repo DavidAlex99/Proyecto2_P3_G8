@@ -23,6 +23,4 @@ public class Configuracion {
     public int getOponentes(){
         return numOponentes;
     }
-    
- //metodo que no entiendo 
 }
