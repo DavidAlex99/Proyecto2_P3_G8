@@ -5,6 +5,7 @@
  */
 package com.mycompany.proyecto_parcial2_2020;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -39,19 +40,32 @@ public class PrimaryController implements Initializable {
     
     @FXML
     private void nuevoJuego(ActionEvent event) {
+        try{
+            App.setRoot("VentanaJuego");
+        }catch(Exception e){
+            
+        }
+        
     }
 
     @FXML
     private void reporte(ActionEvent event) {
+        try{
+            App.setRoot("reporte");
+        }catch(IOException e){
+            System.out.println(e.toString());
+        }
     }
-
     @FXML
     private void configuraciones(ActionEvent event) {
+        try{
+            App.setRoot("configuraciones");
+        }catch(Exception e){
     }
-
+    }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       //To change body of generated methods, choose Tools | Templates.
     }
 
 }

@@ -48,11 +48,15 @@ public class ConfiguracionesController implements Initializable {
 
     @FXML
     private void botonRegresar(ActionEvent event) {
+        try{
+            App.setRoot("primary");
+        }catch(Exception e){
+       }
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
     
 }

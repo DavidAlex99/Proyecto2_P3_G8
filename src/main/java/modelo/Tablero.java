@@ -5,10 +5,25 @@
  */
 package modelo;
 
+import java.util.ArrayList;
+
+
 /**
  *
  * @author PC
  */
 public class Tablero {
-    
+   private ArrayList<CartaJuego> cartas;
+   
+   public Tablero(ArrayList<CartaJuego> cartas){
+       this.cartas = cartas;
+   }
+   
+   public ArrayList<CartaJuego> getCartas(){
+       return cartas;
+   }
+   
+   public void llenarTablero(){
+       //Completar Metodo
+   }
 }
