@@ -11,7 +11,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.proyecto_parcial2_2020.VentanaJuegoController">
    <center>
       <GridPane fx:id="gpCartasMias" prefHeight="400.0" prefWidth="412.0" scaleX="0.7" scaleY="0.8" BorderPane.alignment="CENTER">
