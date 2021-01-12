@@ -41,4 +41,5 @@
             </plugin>
         </plugins>
     </build>
+    <name>Proyecto2_P3_G8</name>
 </project>
