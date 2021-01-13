@@ -20,17 +20,12 @@
       </Label>
       <ChoiceBox fx:id="chCantidad" layoutX="300.0" layoutY="116.0" prefWidth="150.0" />
       <ChoiceBox fx:id="chVisibilidad" layoutX="300.0" layoutY="181.0" prefWidth="150.0" />
-      <Button fx:id="btAceptar" layoutX="140.0" layoutY="257.0" mnemonicParsing="false" onAction="#botonAceptar" text="ACEPTAR">
+      <Button fx:id="btAceptar" layoutX="196.0" layoutY="257.0" mnemonicParsing="false" onAction="#botonAceptar" text="ACEPTAR">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btCancelar" layoutX="259.0" layoutY="258.0" mnemonicParsing="false" onAction="#botonCancelar" text="CANCELAR">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Button>
-      <Button fx:id="btRegresar" layoutX="387.0" layoutY="258.0" mnemonicParsing="false" onAction="#botonRegresar" text="REGRESAR">
+      <Button fx:id="btRegresar" layoutX="313.0" layoutY="257.0" mnemonicParsing="false" onAction="#botonRegresar" text="REGRESAR">
          <font>
             <Font size="13.0" />
          </font>
