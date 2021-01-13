@@ -26,8 +26,7 @@ public class ConfiguracionesController implements Initializable {
     private ChoiceBox<?> chVisibilidad;
     @FXML
     private Button btAceptar;
-    @FXML
-    private Button btCancelar;
+   
     @FXML
     private Button btRegresar;
 
@@ -42,9 +41,6 @@ public class ConfiguracionesController implements Initializable {
     private void botonAceptar(ActionEvent event) {
     }
 
-    @FXML
-    private void botonCancelar(ActionEvent event) {
-    }
 
     @FXML
     private void botonRegresar(ActionEvent event) {
