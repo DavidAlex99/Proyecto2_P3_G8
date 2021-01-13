@@ -14,7 +14,11 @@ import java.io.IOException;
 public class App extends Application {
 
     private static Scene scene;
-
+    //1. RUTA ARCHIVOO PARA PODER LEER LAS IMAGENES
+    public static String pathimagenes = "C:/Users/alexx/Documents/NetBeansProjects JavaFX/Proyecto_parcial2_2020/src/main/resources/com/mycompany/proyecto_parcial2_2020/Imagenes/";
+    //1.1 RUTA PARA E ARCHIVO QUE COTIENE EL NUMERO Y NOMBRE DE LAS CARTAS
+    public static String pathArchivo = "C:/Users/alexx/Documents/NetBeansProjects JavaFX/Proyecto_parcial2_2020/src/main/resources/com/mycompany/proyecto_parcial2_2020/";
+    
     @Override
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("primary"), 640, 480);

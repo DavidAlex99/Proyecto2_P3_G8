@@ -19,6 +19,8 @@ public class Carta {
         this.nombre = nombre;
         this.rutaImagen = rutaImagen;
     }
+    
+    
     public int getNumero(){
         return numero;
     }
