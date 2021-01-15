@@ -13,8 +13,10 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 
 import javafx.scene.image.ImageView;
@@ -42,6 +44,8 @@ public class VentanaJuegoController implements Initializable {
     private HBox hboxMazo;
     @FXML
     private ImageView imgCartaMazo;
+    @FXML
+    private Button btnLoteria;
     /**
      * Initializes the controller class.
      */
@@ -98,14 +102,7 @@ public class VentanaJuegoController implements Initializable {
         }
 }
                 
-                //3. AHORA HAEMMOS EL PUT IF ABSENT
-                //TAL COMO SEHA DICHO, UEREMS QUE EL KEY SEA EL TIPO DE GENERO Y EL VALUE SEA UN ARRAYLIST CON LAS PELICULAS
-                //PERTENCEIENTES 
-                //peliculasGenero.putIfAbsent(separado[0], new ArrayList<Pelicula>());
-                //3.1 GET ARASEPARADO QUE ENCEUNTRA EN LA  POSICON 0 Y CON ESA CLAVE SE ANADE LA PELICUA
-                //peliculasGenero.get(separado[0]).add(p); 
-            
-            //System.out.println(peliculasGenero);
+                
          
         
     }catch (IOException ex) {
@@ -132,5 +129,15 @@ public class VentanaJuegoController implements Initializable {
         
     }
 }*/
+    }
+    
+    @FXML
+    private void verificarGanador(ActionEvent event){
+        try{
+            App.setRoot("Secondary");
+        }catch(Exception e){
+            
+        }
+        
     }
 }
