@@ -45,6 +45,18 @@ public class ConfiguracionesController implements Initializable {
     
     @FXML
     private void botonAceptar(ActionEvent event) {
+        String cant;
+        String visible;
+        cant= cbCantidad.getValue();
+        visible = cbVisibilidad.getValue();
+        
+        System.out.println("El usuario jugara con " +cant+ " oponentes");
+        System.out.println("El usuario escogio el tipo de juego " +visible);
+        
+        // El boton aceptar mostrara las opciones escogidas por el usuario y 
+        //las mostrara por consola, esto solo es para probar el boton aceptar,
+        //para el proyecto final se le realizaran cambios donde guarde estos 
+        //cambios y modifique la modalidad del juego.
     }
 
     @FXML
