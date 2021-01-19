@@ -1,27 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package modelo;
 
-/**
- *
- * @author cholo
- */
+import java.util.Objects;
+
 public class Carta {
-    private int numero;
+    private String numero;
     private String nombre;
     private String rutaImagen;
     
-    public Carta(int numero, String nombre, String rutaImagen){
+    public Carta(String numero, String nombre, String rutaImagen){
         this.numero= numero;
         this.nombre = nombre;
         this.rutaImagen = rutaImagen;
     }
     
     
-    public int getNumero(){
+    public String getNumero(){
         return numero;
     }
     public String getNombre(){
@@ -30,8 +24,35 @@ public class Carta {
     public String getRutaImagen(){
         return rutaImagen;
     }
+
     @Override
-    public boolean equals(Object obj){
-        return false;
+    public int hashCode() {
+        int hash = 3;
+        return hash;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Carta other = (Carta) obj;
+        if (this.numero != other.numero) {
+            return false;
+        }
+        if (!Objects.equals(this.nombre, other.nombre)) {
+            return false;
+        }
+        if (!Objects.equals(this.rutaImagen, other.rutaImagen)) {
+            return false;
+        }
+        return true;
+    }
+    
 }

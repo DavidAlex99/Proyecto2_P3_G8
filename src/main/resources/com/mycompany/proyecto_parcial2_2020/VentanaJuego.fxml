@@ -11,14 +11,14 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.proyecto_parcial2_2020.VentanaJuegoController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.proyecto_parcial2_2020.VentanaJuegoController">
    <center>
-      <GridPane fx:id="gpCartasMias" prefHeight="400.0" prefWidth="412.0" scaleX="0.7" scaleY="0.8" BorderPane.alignment="CENTER">
+      <GridPane fx:id="gpTablero" hgap="20.0" prefHeight="488.0" prefWidth="361.0" scaleX="0.7" scaleY="0.8" vgap="12.0" BorderPane.alignment="CENTER">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="147.28571319580078" minWidth="10.0" prefWidth="79.85713958740234" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="151.71428680419922" minWidth="10.0" prefWidth="81.14286041259766" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="134.1428680419922" minWidth="10.0" prefWidth="78.85713195800781" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="112.42855834960938" minWidth="10.0" prefWidth="73.14286804199219" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -26,54 +26,36 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
-         <children>
-            <ImageView fx:id="imgCarta1" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="imgCarta2" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" />
-            <ImageView fx:id="imgCarta3" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" />
-            <ImageView fx:id="imgCarta4" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" />
-            <ImageView fx:id="imgCarta5" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1" />
-            <ImageView fx:id="imgCarta6" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <ImageView fx:id="imgCarta7" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <ImageView fx:id="imgCarta8" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-            <ImageView fx:id="imgCarta9" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2" />
-            <ImageView fx:id="imgCarta10" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <ImageView fx:id="imgCarta12" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-            <ImageView fx:id="imgCarta11" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <ImageView fx:id="imgCarta13" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="3" />
-            <ImageView fx:id="imgCarta14" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <ImageView fx:id="imgCarta15" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <ImageView fx:id="imgCarta16" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-         </children>
       </GridPane>
    </center>
    <right>
-      <HBox fx:id="hboxMazo" prefHeight="400.0" prefWidth="186.0" BorderPane.alignment="CENTER">
+      <HBox fx:id="hboxMazo" prefHeight="450.0" prefWidth="191.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fx:id="imgCartaMazo" fitHeight="150.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgCartaMazo" fitHeight="177.0" fitWidth="117.0" pickOnBounds="true" preserveRatio="true">
                <HBox.margin>
-                  <Insets top="125.0" />
+                  <Insets top="135.0" />
                </HBox.margin>
             </ImageView>
-            <Button fx:id="btnLoteria" mnemonicParsing="false" onAction="#verificarGanador" prefHeight="0.0" prefWidth="81.0" rotate="90.0" text="Loteria">
+            <Button fx:id="btnLoteria" alignment="CENTER" mnemonicParsing="false" onAction="#verificarGanador" prefHeight="37.0" prefWidth="97.0" rotate="90.0" text="Loteria" textAlignment="CENTER">
                <HBox.margin>
-                  <Insets top="180.0" />
+                  <Insets top="200.0" />
                </HBox.margin>
                <font>
-                  <Font size="17.0" />
+                  <Font size="16.0" />
                </font>
             </Button>
          </children>
       </HBox>
    </right>
    <left>
-      <VBox fx:id="vboxCartas" prefHeight="400.0" prefWidth="142.0" spacing="10.0" BorderPane.alignment="CENTER">
+      <VBox fx:id="vboxCartas" prefHeight="450.0" prefWidth="104.0" spacing="10.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fx:id="imgPosicionGanadora" fitHeight="150.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgPosicionGanadora" fitHeight="175.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
                <VBox.margin>
-                  <Insets left="10.0" top="60.0" />
+                  <Insets left="10.0" top="30.0" />
                </VBox.margin>
             </ImageView>
-            <ImageView fx:id="imgPosicionOponentes" fitHeight="150.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgPosicionOponentes" fitHeight="175.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
                <VBox.margin>
                   <Insets left="10.0" top="20.0" />
                </VBox.margin>

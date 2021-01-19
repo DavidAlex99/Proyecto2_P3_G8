@@ -21,8 +21,8 @@ public class Mazo {
         return cartas;
     }
     
-    public void barajar(){
-    }
+    //public void barajar(){
+    //}
     
     public void mostrarCarta(){
     }

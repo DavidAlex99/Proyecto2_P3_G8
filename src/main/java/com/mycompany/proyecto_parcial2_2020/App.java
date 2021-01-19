@@ -17,7 +17,7 @@ public class App extends Application {
     //1. RUTA ARCHIVOO PARA PODER LEER LAS IMAGENES
     public static String pathimagenes = "Imagenes/";
     //1.1 RUTA PARA E ARCHIVO QUE COTIENE EL NUMERO Y NOMBRE DE LAS CARTAS
-    public static String pathArchivo = "Imagenes/cartasloteria.csv";
+    public static String pathArchivo = "cartasloteria.csv";
     
     @Override
     public void start(Stage stage) throws IOException {

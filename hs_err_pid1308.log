@@ -1,0 +1,186 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 1048576 bytes for AllocateHeap
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (./src/hotspot/share/memory/allocation.cpp:46), pid=1308, tid=19892
+#
+# JRE version:  (11.0.9.1+1) (build )
+# Java VM: OpenJDK 64-Bit Server VM (11.0.9.1+1, mixed mode, sharing, tiered, compressed oops, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: --module-path=C:\Users\alexx\Desktop\Proyecto2_P3_G8\target\classes;C:\Users\alexx\.m2\repository\org\openjfx\javafx-base\13\javafx-base-13-win.jar;C:\Users\alexx\.m2\repository\org\openjfx\javafx-controls\13\javafx-controls-13-win.jar;C:\Users\alexx\.m2\repository\org\openjfx\javafx-fxml\13\javafx-fxml-13-win.jar;C:\Users\alexx\.m2\repository\org\openjfx\javafx-graphics\13\javafx-graphics-13-win.jar --add-modules=com.mycompany.proyecto_parcial2_2020 -Djdk.module.main=com.mycompany.proyecto_parcial2_2020 com.mycompany.proyecto_parcial2_2020/com.mycompany.proyecto_parcial2_2020.App
+
+Host: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz, 8 cores, 15G,  Windows 10 , 64 bit Build 19041 (10.0.19041.662)
+Time: Tue Jan 19 02:04:18 2021 Hora est. Pacífico, Sudamérica elapsed time: 0.018435 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000002a2c61e9800):  JavaThread "Unknown thread" [_thread_in_vm, id=19892, stack(0x000000e965a00000,0x000000e965b00000)]
+
+Stack: [0x000000e965a00000,0x000000e965b00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x5f465a]
+V  [jvm.dll+0x77c78e]
+V  [jvm.dll+0x77de5f]
+V  [jvm.dll+0x77e523]
+V  [jvm.dll+0x2477c8]
+V  [jvm.dll+0xb5304]
+V  [jvm.dll+0x2e0ed4]
+V  [jvm.dll+0x2dadf9]
+V  [jvm.dll+0x758137]
+V  [jvm.dll+0x7598bf]
+V  [jvm.dll+0x352c39]
+V  [jvm.dll+0x73b3c0]
+V  [jvm.dll+0x3ba30f]
+V  [jvm.dll+0x3bc7b1]
+C  [jli.dll+0x520b]
+C  [ucrtbase.dll+0x214c2]
+C  [KERNEL32.DLL+0x17034]
+C  [ntdll.dll+0x4d0d1]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x000002a2c60f2320, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x000002a2c6200000 GCTaskThread "GC Thread#0" [stack: 0x000000e965b00000,0x000000e965c00000] [id=17672]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007fff990664b0]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000002a2c61e66c0] Heap_lock - owner thread: 0x000002a2c61e9800
+
+Heap address: 0x0000000701400000, size: 4076 MB, Compressed Oops mode: Non-zero based: 0x0000000701400000
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (1 events):
+Event: 0.012 Loaded shared library C:\Program Files\AdoptOpenJDK\jdk-11.0.9.101-hotspot\bin\zip.dll
+
+
+Dynamic libraries:
+0x00007ff6e3040000 - 0x00007ff6e304d000 	C:\Program Files\AdoptOpenJDK\jdk-11.0.9.101-hotspot\bin\java.exe
+0x00007fffc96d0000 - 0x00007fffc98c6000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007fffc77f0000 - 0x00007fffc78ad000 	C:\Windows\System32\KERNEL32.DLL
+0x00007fffc6ff0000 - 0x00007fffc72b9000 	C:\Windows\System32\KERNELBASE.dll
+0x00007fffc7630000 - 0x00007fffc7730000 	C:\Windows\System32\ucrtbase.dll
+0x00007fffc4300000 - 0x00007fffc4315000 	C:\Program Files\AdoptOpenJDK\jdk-11.0.9.101-hotspot\bin\VCRUNTIME140.dll
+0x00007fffbfa30000 - 0x00007fffbfa47000 	C:\Program Files\AdoptOpenJDK\jdk-11.0.9.101-hotspot\bin\jli.dll
+0x00007fffc8cd0000 - 0x00007fffc8e70000 	C:\Windows\System32\USER32.dll
+0x00007fffc7320000 - 0x00007fffc7342000 	C:\Windows\System32\win32u.dll
+0x00007fffc8ca0000 - 0x00007fffc8cca000 	C:\Windows\System32\GDI32.dll
+0x00007fffc6e90000 - 0x00007fffc6f9b000 	C:\Windows\System32\gdi32full.dll
+0x00007fffc7400000 - 0x00007fffc749d000 	C:\Windows\System32\msvcp_win.dll
+0x00007fffb7190000 - 0x00007fffb742b000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.746_none_ca02b4b61b8320a4\COMCTL32.dll
+0x00007fffc8f40000 - 0x00007fffc8fde000 	C:\Windows\System32\msvcrt.dll
+0x00007fffc8650000 - 0x00007fffc8680000 	C:\Windows\System32\IMM32.DLL
+0x00007fffbf550000 - 0x00007fffbf5eb000 	C:\Program Files\AdoptOpenJDK\jdk-11.0.9.101-hotspot\bin\msvcp140.dll
+0x00007fff98d80000 - 0x00007fff998c3000 	C:\Program Files\AdoptOpenJDK\jdk-11.0.9.101-hotspot\bin\server\jvm.dll
+0x00007fffc87c0000 - 0x00007fffc886c000 	C:\Windows\System32\ADVAPI32.dll
+0x00007fffc7730000 - 0x00007fffc77cc000 	C:\Windows\System32\sechost.dll
+0x00007fffc7a60000 - 0x00007fffc7b8b000 	C:\Windows\System32\RPCRT4.dll
+0x00007fffc77e0000 - 0x00007fffc77e8000 	C:\Windows\System32\PSAPI.DLL
+0x00007fffb6ca0000 - 0x00007fffb6ca9000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007fffc8a50000 - 0x00007fffc8abb000 	C:\Windows\System32\WS2_32.dll
+0x00007fffb9a00000 - 0x00007fffb9a27000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007fffbeb80000 - 0x00007fffbeb8a000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007fffc5740000 - 0x00007fffc5752000 	C:\Windows\SYSTEM32\kernel.appcore.dll
+0x00007fffc4370000 - 0x00007fffc4380000 	C:\Program Files\AdoptOpenJDK\jdk-11.0.9.101-hotspot\bin\verify.dll
+0x00007fffc54d0000 - 0x00007fffc56b4000 	C:\Windows\SYSTEM32\DBGHELP.DLL
+0x00007fffb7e20000 - 0x00007fffb7e4c000 	C:\Windows\SYSTEM32\dbgcore.DLL
+0x00007fffc6e10000 - 0x00007fffc6e90000 	C:\Windows\System32\bcryptPrimitives.dll
+0x00007fffbf7d0000 - 0x00007fffbf7f8000 	C:\Program Files\AdoptOpenJDK\jdk-11.0.9.101-hotspot\bin\java.dll
+0x00007fffc2740000 - 0x00007fffc274a000 	C:\Program Files\AdoptOpenJDK\jdk-11.0.9.101-hotspot\bin\jimage.dll
+0x00007fffc1bd0000 - 0x00007fffc1be7000 	C:\Program Files\AdoptOpenJDK\jdk-11.0.9.101-hotspot\bin\zip.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\AdoptOpenJDK\jdk-11.0.9.101-hotspot\bin;C:\Windows\SYSTEM32;C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.746_none_ca02b4b61b8320a4;C:\Program Files\AdoptOpenJDK\jdk-11.0.9.101-hotspot\bin\server
+
+VM Arguments:
+jvm_args: --module-path=C:\Users\alexx\Desktop\Proyecto2_P3_G8\target\classes;C:\Users\alexx\.m2\repository\org\openjfx\javafx-base\13\javafx-base-13-win.jar;C:\Users\alexx\.m2\repository\org\openjfx\javafx-controls\13\javafx-controls-13-win.jar;C:\Users\alexx\.m2\repository\org\openjfx\javafx-fxml\13\javafx-fxml-13-win.jar;C:\Users\alexx\.m2\repository\org\openjfx\javafx-graphics\13\javafx-graphics-13-win.jar --add-modules=com.mycompany.proyecto_parcial2_2020 -Djdk.module.main=com.mycompany.proyecto_parcial2_2020 
+java_command: com.mycompany.proyecto_parcial2_2020/com.mycompany.proyecto_parcial2_2020.App
+java_class_path (initial): C:\Users\alexx\Desktop\Proyecto2_P3_G8\target\classes;C:\Users\alexx\.m2\repository\org\openjfx\javafx-base\13\javafx-base-13.jar;C:\Users\alexx\.m2\repository\org\openjfx\javafx-controls\13\javafx-controls-13.jar;C:\Users\alexx\.m2\repository\org\openjfx\javafx-fxml\13\javafx-fxml-13.jar;C:\Users\alexx\.m2\repository\org\openjfx\javafx-graphics\13\javafx-graphics-13.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 2                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 8                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 268435456                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 4273995776                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5836300                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122910970                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122910970                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     bool UseCompressedClassPointers               = true                                 {lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                                 {lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\AdoptOpenJDK\jdk-11.0.9.101-hotspot
+PATH=C:\Program Files\AdoptOpenJDK\jdk-11.0.9.101-hotspot\bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\AOMEI Backupper;%JAVA_HOME%\bin;C:\Program Files\Git\cmd;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\alexx\AppData\Local\Programs\Python\Python38-32\Scripts\;C:\Users\alexx\AppData\Local\Programs\Python\Python38-32\;C:\Users\alexx\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\JetBrains\PyCharm Community Edition 2020.2.1\bin;
+USERNAME=alexx
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 142 Stepping 10, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10 , 64 bit Build 19041 (10.0.19041.662)
+OS uptime: 0 days 17:55 hours
+
+CPU:total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 142 stepping 10, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx, fma
+
+Memory: 4k page, system-wide physical 16300M (3133M free)
+TotalPageFile size 16300M (AvailPageFile size 5M)
+current process WorkingSet (physical memory assigned to process): 9M, peak: 9M
+current process commit charge ("private bytes"): 59M, peak: 60M
+
+vm_info: OpenJDK 64-Bit Server VM (11.0.9.1+1) for windows-amd64 JRE (11.0.9.1+1), built on Nov 10 2020 15:18:49 by "" with MS VC++ 15.9 (VS2017)
+
+END.
