@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.ResourceBundle;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -65,8 +66,29 @@ public class VentanaJuegoController  {
        tablero.lecturaArchivoCarta();
        gpTablero.setVgap(15);
        gpTablero.setHgap(30);
-        llenarTablero();
-    } 
+        //////////////////////////////////////////////
+       //AGREGADO
+       llenarTablero();
+       Carta.listaTodasCartas();
+       Carta.obtenerCartaAleatorioMazo();
+       //llenarMazo();
+       Thread t = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while(true){
+                    try{
+                        Platform.runLater(()-> llenarMazo());
+                        Thread.sleep(500);
+                    }catch(InterruptedException ex){
+                        ex.printStackTrace();
+                    }
+                }
+            }
+
+        });
+        t.start();
+    }
+     
     
     //Tomamos los datos de la lista de cartas para llenar el tablero
     public void llenarTablero(){
@@ -95,6 +117,26 @@ public class VentanaJuegoController  {
 
             }
         } 
+    }
+        //AGREGADO
+    public void llenarMazo(){
+        ArrayList<Carta> cartas = tablero.getCartas();
+        ArrayList<String> indice = Carta.cartasAleatoriasMazo;
+        Random r = new Random();
+        int x = 54;
+        int num = r.nextInt(x);
+        //url de la imagen como numero
+        String ur = indice.get(num);
+        System.out.println(ur);
+        for(Carta c:cartas){
+            if(c.getNumero().equalsIgnoreCase(ur)){
+                Image url = new Image(getClass().getResourceAsStream(c.getRutaImagen()));
+                imgCartaMazo.setImage(url);
+                indice.remove(num);
+                x--;
+            }
+        }
+        
     }
                 
                 
