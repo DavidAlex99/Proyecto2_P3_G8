@@ -24,6 +24,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import modelo.Carta;
 import modelo.Configuracion;
+import modelo.Juego;
 import modelo.Tablero;
 /**
  * FXML Controller class
@@ -50,6 +51,8 @@ public class VentanaJuegoController  {
     private ImageView imgAlineacionGanadora;
     @FXML
     private GridPane gpTableroOponente;
+    //agregado 2001
+    Juego juego;
     
     
     //public VentanaJuegoController(){
@@ -71,7 +74,9 @@ public class VentanaJuegoController  {
        tableroOponente();
        Carta.listaTodasCartas();
        Carta.obtenerCartaAleatorioMazo();
+       cargarImagenAlineacion();
        //llenarMazo();
+       
        Thread t = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -87,6 +92,19 @@ public class VentanaJuegoController  {
 
         });
         t.start();
+    }
+    
+    //agregado 2001
+    public void cargarImagenAlineacion(){
+        //String url = juego.muestreoAlineacion(); 
+        juego = new Juego();
+        //imgPosicionGanadora.setImage(new Image(getClass().getResourceAsStream(App.pathimagenes + "match.png")));
+        System.out.println(juego.muestreoAlineacion());
+        imgAlineacionGanadora.setImage(new Image(getClass().getResourceAsStream(App.pathimagenes + juego.muestreoAlineacion())));
+        System.out.println(juego.getColumnasAlineacion());
+        System.out.println(juego.getFilasAlineacion());
+        
+        
     }
      
     
