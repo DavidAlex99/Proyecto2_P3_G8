@@ -35,10 +35,9 @@ public class Tablero {
            
            String line = br.readLine();
            while(line != null){
-               //System.out.println(line);
+              
                String[] datos = line.strip().split(",");
-               //Se crea un for para iterar la lista de numeros y asi poder obtener
-               //las imagenes
+               
                 String rutaImg = App.pathimagenes+datos[0]+".png";
                 //La clase carta toma estos valores y los agrega a una lista de 
                 //tipo carta

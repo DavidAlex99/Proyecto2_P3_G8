@@ -5,7 +5,13 @@
  */
 package com.mycompany.proyecto_parcial2_2020;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -15,6 +21,7 @@ import javafx.fxml.Initializable;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import modelo.Configuracion;
 /**
  * FXML Controller class
  *
@@ -31,11 +38,12 @@ public class ConfiguracionesController implements Initializable {
     private ComboBox<String> cbCantidad;
     @FXML
     private ComboBox<String> cbVisibilidad;
-    /**
-     * Initializes the controller class.
-     */
+    
+    private Configuracion configuracion;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        //Agrega valores a los combobox
         ObservableList<String> list = FXCollections.observableArrayList("1","2");
         cbCantidad.setItems(list);
         
@@ -45,18 +53,33 @@ public class ConfiguracionesController implements Initializable {
     
     @FXML
     private void botonAceptar(ActionEvent event) {
-        String cant;
-        String visible;
-        cant= cbCantidad.getValue();
-        visible = cbVisibilidad.getValue();
         
-        System.out.println("El usuario jugara con " +cant+ " oponentes");
-        System.out.println("El usuario escogio el tipo de juego " +visible);
         
-        // El boton aceptar mostrara las opciones escogidas por el usuario y 
-        //las mostrara por consola, esto solo es para probar el boton aceptar,
-        //para el proyecto final se le realizaran cambios donde guarde estos 
-        //cambios y modifique la modalidad del juego.
+        //System.out.println("El usuario jugara con " +cant+ " oponentes");
+        //System.out.println("El usuario escogio el tipo de juego " +visible);
+        
+        ArrayList<Configuracion> datos = new ArrayList<>();
+        datos.add( new Configuracion(Integer.parseInt(cbCantidad.getValue()), cbVisibilidad.getValue()));
+        
+        //Creamos un nuevo archivo en donde se guardaran las configuraciones 
+        //escogidas por el usuario
+        File file =new File("visibilidad.ser");
+ 
+        try {
+            
+            FileOutputStream fileOutput = new FileOutputStream(file);
+            ObjectOutputStream objectOutput = new ObjectOutputStream(fileOutput);
+            objectOutput.writeObject(datos);
+            objectOutput.close();
+            fileOutput.close();
+            System.out.println("Datos guardados correctamente...");
+ 
+        } catch (FileNotFoundException e) {
+            System.out.println("Error: El fichero no existe. ");
+        } catch (IOException e) {
+            System.out.println("Error: Fallo en la escritura en el fichero. ");
+        }
+        
     }
 
     @FXML

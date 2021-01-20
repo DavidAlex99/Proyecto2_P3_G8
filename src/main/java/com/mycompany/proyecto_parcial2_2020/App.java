@@ -18,6 +18,8 @@ public class App extends Application {
     public static String pathimagenes = "Imagenes/";
     //1.1 RUTA PARA E ARCHIVO QUE COTIENE EL NUMERO Y NOMBRE DE LAS CARTAS
     public static String pathArchivo = "cartasloteria.csv";
+    //1.2 RUTA PARA EL ARCHIVO QUE CONTIENE LA CONFIGURACION DEL JEUGO
+    public static String pathDatos = "visibilidad.ser";
     
     @Override
     public void start(Stage stage) throws IOException {

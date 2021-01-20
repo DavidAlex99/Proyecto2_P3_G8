@@ -5,6 +5,8 @@
  */
 package com.mycompany.proyecto_parcial2_2020;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -21,6 +23,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import modelo.Carta;
+import modelo.Configuracion;
 import modelo.Tablero;
 /**
  * FXML Controller class
@@ -42,6 +45,7 @@ public class VentanaJuegoController  {
     private GridPane gpTablero;
     
     private Tablero tablero = new Tablero();
+    
     @FXML
     private ImageView imgAlineacionGanadora;
     @FXML
@@ -58,6 +62,7 @@ public class VentanaJuegoController  {
     public void initialize() {
         //Llenar el Gridpane gpTablero
        tablero.lecturaArchivoCarta();
+    
        gpTablero.setVgap(15);
        gpTablero.setHgap(30);
         //////////////////////////////////////////////
@@ -133,9 +138,12 @@ public class VentanaJuegoController  {
         }
         
     }
-                
+    
+    
+    
+ 
    public void tableroOponente(){
-       ArrayList<Carta> cartas = tablero.getCartas();
+        ArrayList<Carta> cartas = tablero.getCartas();
         int fila = 0;
         int columna = 0;
         ArrayList<Integer> num = new ArrayList<>();
@@ -161,7 +169,8 @@ public class VentanaJuegoController  {
             }
         } 
    
-   }
+}
+
                 
          
         
