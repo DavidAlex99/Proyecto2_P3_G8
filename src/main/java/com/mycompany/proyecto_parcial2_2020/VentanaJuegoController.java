@@ -7,13 +7,8 @@ package com.mycompany.proyecto_parcial2_2020;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
-import java.util.ResourceBundle;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -25,7 +20,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
 import modelo.Carta;
 import modelo.Tablero;
 /**
@@ -39,10 +33,6 @@ public class VentanaJuegoController  {
     @FXML
     private VBox vboxCartas;
     @FXML
-    private ImageView imgPosicionGanadora;
-    @FXML
-    private ImageView imgPosicionOponentes;
-    @FXML
     private HBox hboxMazo;
     @FXML
     private ImageView imgCartaMazo;
@@ -52,6 +42,10 @@ public class VentanaJuegoController  {
     private GridPane gpTablero;
     
     private Tablero tablero = new Tablero();
+    @FXML
+    private ImageView imgAlineacionGanadora;
+    @FXML
+    private GridPane gpTableroOponente;
     
     
     //public VentanaJuegoController(){
@@ -69,6 +63,7 @@ public class VentanaJuegoController  {
         //////////////////////////////////////////////
        //AGREGADO
        llenarTablero();
+       tableroOponente();
        Carta.listaTodasCartas();
        Carta.obtenerCartaAleatorioMazo();
        //llenarMazo();
@@ -78,7 +73,7 @@ public class VentanaJuegoController  {
                 while(true){
                     try{
                         Platform.runLater(()-> llenarMazo());
-                        Thread.sleep(500);
+                        Thread.sleep(3000);
                     }catch(InterruptedException ex){
                         ex.printStackTrace();
                     }
@@ -97,7 +92,7 @@ public class VentanaJuegoController  {
         int columna = 0;
         ArrayList<Integer> num = new ArrayList<>();
         Random aleatorio = new Random(System.currentTimeMillis());
-        for (int i = 0; i<22 ; i++) {
+        for (int i = 0; i<25 ; i++) {
             int intAleatorio = aleatorio.nextInt(55);
             if (num.contains(intAleatorio) == false ){
                 num.add(intAleatorio);
@@ -127,7 +122,7 @@ public class VentanaJuegoController  {
         int num = r.nextInt(x);
         //url de la imagen como numero
         String ur = indice.get(num);
-        System.out.println(ur);
+        //System.out.println(ur);
         for(Carta c:cartas){
             if(c.getNumero().equalsIgnoreCase(ur)){
                 Image url = new Image(getClass().getResourceAsStream(c.getRutaImagen()));
@@ -139,6 +134,34 @@ public class VentanaJuegoController  {
         
     }
                 
+   public void tableroOponente(){
+       ArrayList<Carta> cartas = tablero.getCartas();
+        int fila = 0;
+        int columna = 0;
+        ArrayList<Integer> num = new ArrayList<>();
+        Random aleatorio = new Random(System.currentTimeMillis());
+        for (int i = 0; i<25 ; i++) {
+            int intAleatorio = aleatorio.nextInt(55);
+            if (num.contains(intAleatorio) == false ){
+                num.add(intAleatorio);
+                Image url = new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen()));
+                ImageView img = new ImageView(url);
+                img.setFitHeight(40);
+                img.setFitWidth(30);
+                gpTableroOponente.add(img,columna,fila);
+                fila++;
+                if(fila == 4){
+                    fila = 0;
+                    columna++;
+                }
+                 if(columna == 4)
+                    columna = 0;
+           
+
+            }
+        } 
+   
+   }
                 
          
         

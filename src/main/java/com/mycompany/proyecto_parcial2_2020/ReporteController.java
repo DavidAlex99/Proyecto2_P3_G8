@@ -37,6 +37,7 @@ public class ReporteController implements Initializable {
     
     @FXML
     private void mostrarReporte(ActionEvent event) {
+        
     }
 
     @FXML
