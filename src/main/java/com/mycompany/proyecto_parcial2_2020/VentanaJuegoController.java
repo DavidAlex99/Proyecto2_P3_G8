@@ -16,12 +16,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import modelo.Carta;
 import modelo.Configuracion;
 import modelo.Juego;
@@ -46,6 +48,7 @@ public class VentanaJuegoController  {
     private GridPane gpTablero;
     
     private Tablero tablero = new Tablero();
+    public Configuracion configuracion;
     
     @FXML
     private ImageView imgAlineacionGanadora;
@@ -53,6 +56,8 @@ public class VentanaJuegoController  {
     private GridPane gpTableroOponente;
     //agregado 2001
     Juego juego;
+    @FXML
+    private Label lbCarga;
     
     
     //public VentanaJuegoController(){
@@ -78,31 +83,32 @@ public class VentanaJuegoController  {
        //llenarMazo();
        
        Thread t = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                while(true){
-                    try{
-                        Platform.runLater(()-> llenarMazo());
-                        Thread.sleep(3000);
-                    }catch(InterruptedException ex){
-                        ex.printStackTrace();
-                    }
-                }
+       @Override
+       public void run() {
+        while(true){
+            try{
+                Platform.runLater(()-> llenarMazo());
+                Thread.sleep(1000);
+            }catch(InterruptedException ex){
+                ex.printStackTrace();
             }
-
-        });
-        t.start();
+            }
+       }
+       
+       });
+       t.start();
     }
+
     
     //agregado 2001
     public void cargarImagenAlineacion(){
         //String url = juego.muestreoAlineacion(); 
         juego = new Juego();
         //imgPosicionGanadora.setImage(new Image(getClass().getResourceAsStream(App.pathimagenes + "match.png")));
-        System.out.println(juego.muestreoAlineacion());
+        //System.out.println(juego.muestreoAlineacion());
         imgAlineacionGanadora.setImage(new Image(getClass().getResourceAsStream(App.pathimagenes + juego.muestreoAlineacion())));
-        System.out.println(juego.getColumnasAlineacion());
-        System.out.println(juego.getFilasAlineacion());
+        //System.out.println(juego.getColumnasAlineacion());
+        //System.out.println(juego.getFilasAlineacion());
         
         
     }
@@ -138,34 +144,53 @@ public class VentanaJuegoController  {
     }
         //AGREGADO
     public void llenarMazo(){
+        
         ArrayList<Carta> cartas = tablero.getCartas();
         ArrayList<String> indice = Carta.cartasAleatoriasMazo;
         Random r = new Random();
         int x = 54;
         int num = r.nextInt(x);
-        //url de la imagen como numero
         String ur = indice.get(num);
-        //System.out.println(ur);
         for(Carta c:cartas){
             if(c.getNumero().equalsIgnoreCase(ur)){
                 Image url = new Image(getClass().getResourceAsStream(c.getRutaImagen()));
                 imgCartaMazo.setImage(url);
                 indice.remove(num);
                 x--;
-            }
-        }
+                
+                
+                //Llenado deL con las condiciones  LABEL
+                if (indice.size() == 41){
+                    lbCarga.setText(" 25% DE CARTAS MOSTRADAS");
+                }else if (indice.size() == 27){
+                    lbCarga.setText(" 50% DE CARTAS MOSTRADAS");
+                }else if (indice.size() == 14){
+                    lbCarga.setText(" 75% DE CARTAS MOSTRADAS");
+                }
         
+        }
     }
+    }
+    
+    
+   
+    
     
     
     
  
    public void tableroOponente(){
+       configuracion= new Configuracion();
+       configuracion.lecturaDatos();
+       
+       if(configuracion.getVisible().equals("Visible")){
+        //System.out.println("Hola");
         ArrayList<Carta> cartas = tablero.getCartas();
         int fila = 0;
         int columna = 0;
         ArrayList<Integer> num = new ArrayList<>();
         Random aleatorio = new Random(System.currentTimeMillis());
+        //System.out.println(cartas.get(0).getRutaImagen());
         for (int i = 0; i<25 ; i++) {
             int intAleatorio = aleatorio.nextInt(55);
             if (num.contains(intAleatorio) == false ){
@@ -186,6 +211,38 @@ public class VentanaJuegoController  {
 
             }
         } 
+       }else {
+           ArrayList<Carta> cartas = tablero.getCartas();
+        int fila = 0;
+        int columna = 0;
+           //System.out.println(cartas.get(0).getRutaImagen());
+        ArrayList<Integer> num = new ArrayList<>();
+        Random aleatorio = new Random(System.currentTimeMillis());
+        for (int i = 0; i<25 ; i++) {
+            int intAleatorio = aleatorio.nextInt(55);
+            if (num.contains(intAleatorio) == false ){
+                num.add(intAleatorio);
+                Image url = new Image(getClass().getResourceAsStream("Imagenes/match.png"));
+                ImageView img = new ImageView(url);
+                img.setFitHeight(40);
+                img.setFitWidth(30);
+                gpTableroOponente.add(img,columna,fila);
+                fila++;
+                if(fila == 4){
+                    fila = 0;
+                    columna++;
+                }
+                 if(columna == 4)
+                    columna = 0;
+           
+
+            }
+        
+           
+       }         
+        
+       }
+        
    
 }
 
@@ -207,3 +264,6 @@ public class VentanaJuegoController  {
 
     
 }
+
+
+

@@ -25,5 +25,6 @@ public class Mazo {
     //}
     
     public void mostrarCarta(){
+        
     }
 }

@@ -6,6 +6,7 @@
 package com.mycompany.proyecto_parcial2_2020;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,6 +15,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import modelo.Configuracion;
+
 /**
  * FXML Controller class
  *
@@ -28,11 +31,13 @@ public class ReporteController implements Initializable {
     private Label lbReporte;
     @FXML
     private Button btRegresar;
+
     /**
      * Initializes the controller class.
      */
     public void initialize() {
-        // TODO
+        
+        
     }    
     
     @FXML
@@ -42,6 +47,7 @@ public class ReporteController implements Initializable {
 
     @FXML
     private void botonRegresar(ActionEvent event) {
+        
         try{
             App.setRoot("primary");
         }catch(Exception e){

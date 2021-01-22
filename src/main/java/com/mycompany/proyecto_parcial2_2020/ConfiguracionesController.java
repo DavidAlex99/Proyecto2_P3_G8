@@ -39,7 +39,7 @@ public class ConfiguracionesController implements Initializable {
     @FXML
     private ComboBox<String> cbVisibilidad;
     
-    private Configuracion configuracion;
+    //private Configuracion configuracion = new Configuracion();
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -55,24 +55,27 @@ public class ConfiguracionesController implements Initializable {
     private void botonAceptar(ActionEvent event) {
         
         
-        //System.out.println("El usuario jugara con " +cant+ " oponentes");
-        //System.out.println("El usuario escogio el tipo de juego " +visible);
+        //System.out.println("El usuario jugara con " +cbCantidad.getValue()+ " oponentes");
+        //System.out.println("El usuario escogio el tipo de juego " +cbVisibilidad.getValue());
+        Configuracion configuracion = new Configuracion(Integer.parseInt(cbCantidad.getValue()), cbVisibilidad.getValue());
         
-        ArrayList<Configuracion> datos = new ArrayList<>();
-        datos.add( new Configuracion(Integer.parseInt(cbCantidad.getValue()), cbVisibilidad.getValue()));
         
+        //System.out.println(configuracion.getOponentes()+configuracion.getVisible());
         //Creamos un nuevo archivo en donde se guardaran las configuraciones 
         //escogidas por el usuario
         File file =new File("visibilidad.ser");
- 
+        
         try {
-            
+             
             FileOutputStream fileOutput = new FileOutputStream(file);
             ObjectOutputStream objectOutput = new ObjectOutputStream(fileOutput);
-            objectOutput.writeObject(datos);
+            ArrayList<Configuracion> lista = new ArrayList<Configuracion>();
+            lista.add(configuracion);
+            objectOutput.writeObject(lista);
+            objectOutput.flush();
             objectOutput.close();
             fileOutput.close();
-            System.out.println("Datos guardados correctamente...");
+            System.out.println("Datos guardados correctamente");
  
         } catch (FileNotFoundException e) {
             System.out.println("Error: El fichero no existe. ");

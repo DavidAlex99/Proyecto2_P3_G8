@@ -15,12 +15,16 @@ import java.util.ArrayList;
 public class Configuracion implements Serializable {
     private String visible;
     private int numOponentes;
-    private ArrayList datos;
+    public Configuracion datos;
    
     
     public Configuracion(int numOponentes, String visible){
         this.visible = visible;
         this.numOponentes = numOponentes;    
+    }
+
+    public Configuracion() {
+        
     }
 
     
@@ -33,12 +37,14 @@ public class Configuracion implements Serializable {
     }
     
     
-   public ArrayList lecturaDatos(){
+   public void lecturaDatos(){
       
         //recupera del archivo serializado 
         try(ObjectInputStream in = new ObjectInputStream(new FileInputStream(App.pathDatos))){
           
-            datos = (ArrayList<Configuracion>) in.readObject();
+            datos = ((ArrayList<Configuracion>)in.readObject()).get(0);
+            this.numOponentes= datos.getOponentes();
+            this.visible=datos.getVisible();
           
         } catch (FileNotFoundException ex) {
             System.out.println("Error de IoException");
@@ -47,7 +53,8 @@ public class Configuracion implements Serializable {
         } catch (ClassNotFoundException ex) {
             System.out.println(ex.getMessage());
         }
-     
-        return datos;
+        catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
    }
 }
