@@ -41,7 +41,7 @@ public class PrimaryController implements Initializable {
     @FXML
     private void nuevoJuego(ActionEvent event) {
         try{
-            App.setRoot("VentanaJuego");
+            App.setRoot("Jugador");
         }catch(Exception e){
             
         }
