@@ -17,6 +17,8 @@ public class Juego {
         //lista con las filas y columnas, par ordenado con el mismo indice
     private ArrayList<Integer> filasAlineacion;
     private ArrayList<Integer> columnasAlineacion;
+    private ArrayList<Integer> filasAlineacion2;
+    private ArrayList<Integer> columnasAlineacion2;
     private ArrayList<Alineacion> alineaciones = new ArrayList<>();
     
     public Juego(String fecha, int duracion, ArrayList<Jugador> jugadores, Jugador ganador, Configuracion configuracion, Mazo mazo, ArrayList<Carta> cartasjugadas, Alineacion alineacion){
@@ -32,6 +34,8 @@ public class Juego {
     public Juego(){
         filasAlineacion = new ArrayList<>();
         columnasAlineacion = new ArrayList<>();
+        filasAlineacion2 = new ArrayList<>();
+        columnasAlineacion2 = new ArrayList<>();
     }
     public String getFecha(){
         return fecha;
@@ -64,6 +68,15 @@ public class Juego {
     public ArrayList getFilasAlineacion(){
         return filasAlineacion;
     }
+
+    public ArrayList<Integer> getFilasA2() {
+        return filasAlineacion2;
+    }
+
+    public ArrayList<Integer> getColumnasA2() {
+        return columnasAlineacion2;
+    }
+    
     
     public void verificarJuego(){
     }
@@ -109,6 +122,15 @@ public class Juego {
             columnasAlineacion.add(2);
             columnasAlineacion.add(3);
         }
+        filasAlineacion2.add(filasAlineacion.get(0));
+        filasAlineacion2.add(filasAlineacion.get(1));
+        filasAlineacion2.add(filasAlineacion.get(2));
+        filasAlineacion2.add(filasAlineacion.get(3));
+        columnasAlineacion2.add(columnasAlineacion.get(0));
+        columnasAlineacion2.add(columnasAlineacion.get(1));
+        columnasAlineacion2.add(columnasAlineacion.get(2));
+        columnasAlineacion2.add(columnasAlineacion.get(3));
+        
     return p + ".png";    
     }
 }

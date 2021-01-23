@@ -13,6 +13,16 @@ import java.util.ArrayList;
  */
 public class Mazo {
     private ArrayList<Carta> cartas;
+    //atrivtos anadidos
+    private int fila = 0;
+    private int columna = 0;
+    private Carta carta;
+    
+    public Mazo(Carta carta, int columna, int fila){
+        this.carta = carta;
+        this.columna = columna;
+        this.fila = fila;
+    }
     
     public Mazo(ArrayList<Carta> cartas){
         this.cartas = new ArrayList<>();
@@ -21,6 +31,17 @@ public class Mazo {
         return cartas;
     }
     
+    public int getFila() {
+        return fila;
+    }
+
+    public int getColumna() {
+        return columna;
+    }
+
+    public Carta getCarta() {
+        return carta;
+    }
     //public void barajar(){
     //}
     

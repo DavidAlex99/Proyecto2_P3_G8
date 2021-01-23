@@ -14,7 +14,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="655.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.proyecto_parcial2_2020.VentanaJuegoController">
    <center>
-      <GridPane fx:id="gpTablero" hgap="20.0" prefHeight="450.0" prefWidth="401.0" scaleX="0.7" scaleY="0.8" vgap="12.0" BorderPane.alignment="CENTER">
+      <GridPane fx:id="gpTablero" hgap="20.0" onMouseClicked="#marcarCarta1" prefHeight="450.0" prefWidth="401.0" scaleX="0.7" scaleY="0.8" vgap="12.0" BorderPane.alignment="CENTER">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="147.28571319580078" minWidth="10.0" prefWidth="79.85713958740234" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="151.71428680419922" minWidth="10.0" prefWidth="81.14286041259766" />
