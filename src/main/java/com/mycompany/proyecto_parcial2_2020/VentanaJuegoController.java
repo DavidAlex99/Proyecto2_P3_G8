@@ -24,6 +24,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import modelo.Carta;
@@ -58,6 +60,8 @@ public class VentanaJuegoController  {
     @FXML
     private GridPane gpTableroOponente;
     //agregado 2001
+    //
+    
     Juego juego;
     
     @FXML
@@ -100,6 +104,7 @@ public class VentanaJuegoController  {
        Carta.listaTodasCartas();
        Carta.obtenerCartaAleatorioMazo();
        cargarImagenAlineacion();
+       //imgPosicionGanadora.setImage(new Image(getClass().getResourceAsStream(App.pathimagenes + "match.png")));
        //llenarMazo();
        
        Thread t = new Thread(new Runnable() {
@@ -129,8 +134,8 @@ public class VentanaJuegoController  {
         //imgPosicionGanadora.setImage(new Image(getClass().getResourceAsStream(App.pathimagenes + "match.png")));
         System.out.println(juego.muestreoAlineacion());
         imgAlineacionGanadora.setImage(new Image(getClass().getResourceAsStream(App.pathimagenes + juego.muestreoAlineacion())));
-        System.out.println(juego.getColumnasAlineacion());
-        System.out.println(juego.getFilasAlineacion());
+        System.out.println("estas son las columnas ganadoras" + juego.getColumnasA2());
+        System.out.println("estas son lasfilas ganadoras" + juego.getFilasA2());
         
         filaAlineacion = juego.getFilasA2();
         columnaAlineacion = juego.getColumnasA2();
@@ -215,12 +220,31 @@ public class VentanaJuegoController  {
         //for (int i = 0; i<25 ; i++) {
             int intAleatorio = aleatorio.nextInt(55);
             if (num.contains(intAleatorio) == false ){
+                //StackPane stcFrijol = new StackPane();
+                //Pane paneFrijol = new Pane();
                 num.add(intAleatorio);
                 Image url = new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen()));
                 ImageView imgCarta1 = new ImageView(url);
                 imgCarta1.setFitHeight(105);
                 imgCarta1.setFitWidth(61);
-                gpTablero.add(imgCarta1,0,0);   
+                ////////////
+                //Image url00 = new Image(getClass().getResourceAsStream(App.pathimagenes + "frejol.png"));
+                //ImageView imgCarta00 = new ImageView(url00);
+                //imgCarta00.setFitHeight(40);
+                //imgCarta00.setFitWidth(25);
+                //paneFrijol.getChildren().add(imgCarta00);
+                //stcFrijol.getChildren().add(paneFrijol);
+                gpTablero.add(imgCarta1,0,0);  
+                //gpTablero.add(stcFrijol,0,0);
+                /////////////////////////////
+                
+                /*prueba poniendo frejol
+                Image url00 = new Image(getClass().getResourceAsStream(App.pathimagenes + "frejol.png"));
+                ImageView imgCarta00 = new ImageView(url00);
+                imgCarta00.setFitHeight(40);
+                imgCarta00.setFitWidth(25);
+                gpTablero.add(imgCarta00,0,0);*/  
+                ////////////////////////////
                 Mazo m1 = new Mazo(cartas.get(intAleatorio),0,0);
                 mazoAlternante.add(m1);
                 
@@ -515,6 +539,8 @@ public class VentanaJuegoController  {
     
     ////////////////////////
         public void marcarCarta1(javafx.scene.input.MouseEvent event) {
+        //StackPane stcfrijol = new StackPane();
+        //Pane pnfrijol = new Pane();
         Node clickedNode = event.getPickResult().getIntersectedNode();
         int colIndex = 0;
         int rowIndex = 0;
@@ -525,8 +551,11 @@ public class VentanaJuegoController  {
             System.out.println("Mouse clicked cell: " + colIndex + " And: " + rowIndex);
             filasMarcadas.add(rowIndex);
             columnasMarcadas.add(colIndex);
+            
     }
-        VerificarCartaMazo(colIndex, rowIndex);
+        ponerFrejol(colIndex, rowIndex);
+        //marcarCarta(colIndex, rowIndex);
+        
         //PRUEBA
         for (Mazo m1: mazoAlternante){
             System.out.println("La fila es " + m1.getColumna());
@@ -546,6 +575,24 @@ public class VentanaJuegoController  {
         }
         
 }//////////////////////
+        
+    public void ponerFrejol(int colIndex, int rowIndex){
+        StackPane stcFrijol = new StackPane();
+        Pane paneFrijol = new Pane();
+        Image url00 = new Image(getClass().getResourceAsStream(App.pathimagenes + "frejol.png"));
+        ImageView imgCarta00 = new ImageView(url00);
+        imgCarta00.setFitHeight(40);
+        imgCarta00.setFitWidth(25);
+        paneFrijol.getChildren().add(imgCarta00);
+        stcFrijol.getChildren().add(paneFrijol);
+        gpTablero.add(stcFrijol,colIndex, rowIndex);
+        
+
+        //paneFrijol.getChildren().add(imgCarta00);
+        //gpTablero.add(paneFrijol,0,0);
+        //gpTablero.add(pnfrijol,0,0);
+    }    
+        
     //verifiacion que la carta que se clikea sea la misma del mazo
     //recibe como parametros la columna y la fila que se clickea
     //etse metodo iria dentro cuando se clickea
@@ -561,6 +608,8 @@ public class VentanaJuegoController  {
                         //filasMarcadas.add(rowIndex);
                         //columnasMarcadas.add(colIndex);
                         System.out.println("La fila es " + filasMarcadas);
+                        
+                                
                     }
                     //si coge                                                                                                                                                                                                                          
                 }
@@ -570,7 +619,8 @@ public class VentanaJuegoController  {
         }
     } 
     ////////////
-    public void VerificarCartaAlineacion(){
+    //esta se va a llamar cuando se aprete el boton
+    public void VerificarCartaAlineacion(ActionEvent event){
         for(Integer i: juego.getColumnasA2()){
             System.out.println(i);
         }
@@ -583,6 +633,7 @@ public class VentanaJuegoController  {
                     i++;
                 }else{
                     mostrarAlerta("No tiene la alineacion completa", Alert.AlertType.ERROR);
+                    
             }
         }
     
@@ -596,7 +647,6 @@ public class VentanaJuegoController  {
         alert.setHeaderText(null);
         alert.setContentText(mensaje);
         alert.showAndWait();
-        
     }    
         //////////////////
         ////////////
