@@ -59,6 +59,7 @@ public class VentanaJuegoController  {
     private GridPane gpTableroOponente;
     //agregado 2001
     Juego juego;
+    
     @FXML
     private Label lbCarga;
     //FILA y columna dde la alineacion ganadora
@@ -222,8 +223,14 @@ public class VentanaJuegoController  {
                 gpTablero.add(imgCarta1,0,0);   
                 Mazo m1 = new Mazo(cartas.get(intAleatorio),0,0);
                 mazoAlternante.add(m1);
+                
                 /*Image url = new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen()));
                 ImageView img = new ImageView(url);
+                
+                while(num.contains(intAleatorio) == true){
+                    aleatorio = new Random(System.currentTimeMillis());
+                    intAleatorio = aleatorio.nextInt(54);
+                }
                 img.setFitHeight(120);
                 img.setFitWidth(90);
                 gpTablero.add(img,columna,fila);
@@ -237,7 +244,10 @@ public class VentanaJuegoController  {
             }
         aleatorio = new Random(System.currentTimeMillis());
         intAleatorio = aleatorio.nextInt(54);
-        while(num.contains(intAleatorio) == false ){
+            while(num.contains(intAleatorio) == true){
+                    aleatorio = new Random(System.currentTimeMillis());
+                    intAleatorio = aleatorio.nextInt(54);
+                }
             num.add(intAleatorio);
             Image url = new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen()));
             ImageView imgCarta2 = new ImageView(url);
@@ -246,204 +256,261 @@ public class VentanaJuegoController  {
             gpTablero.add(imgCarta2,1,0); 
             Mazo m1 = new Mazo(cartas.get(intAleatorio),1,0);
             mazoAlternante.add(m1);
+            
             //imgCarta2.setImage(new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen())));
-            }
+            
         //IMAGENCARTA 3
         aleatorio = new Random(System.currentTimeMillis());
         intAleatorio = aleatorio.nextInt(53);
-        while(num.contains(intAleatorio) == false ){
+        while(num.contains(intAleatorio) == true){
+                    aleatorio = new Random(System.currentTimeMillis());
+                    intAleatorio = aleatorio.nextInt(53);
+                }
             num.add(intAleatorio);
-            Image url = new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen()));
-            ImageView imgCarta3 = new ImageView(url);
+            Image url1 = new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen()));
+            ImageView imgCarta3 = new ImageView(url1);
             imgCarta3.setFitHeight(105);
             imgCarta3.setFitWidth(61);
             gpTablero.add(imgCarta3,2,0); 
-            Mazo m1 = new Mazo(cartas.get(intAleatorio),2,0);
-            mazoAlternante.add(m1);
+            Mazo m2 = new Mazo(cartas.get(intAleatorio),2,0);
+            mazoAlternante.add(m2);
+            
             //imgCarta3.setImage(new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen())));
-            }
+            
         //IMAGENCARTA 4
         aleatorio = new Random(System.currentTimeMillis());
         intAleatorio = aleatorio.nextInt(52);
-        while(num.contains(intAleatorio) == false ){
+        while(num.contains(intAleatorio) == true){
+                    aleatorio = new Random(System.currentTimeMillis());
+                    intAleatorio = aleatorio.nextInt(52);
+                }
             num.add(intAleatorio);
-            Image url = new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen()));
-            ImageView imgCarta4 = new ImageView(url);
+            Image url2 = new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen()));
+            ImageView imgCarta4 = new ImageView(url2);
             imgCarta4.setFitHeight(105);
             imgCarta4.setFitWidth(61);
             gpTablero.add(imgCarta4,3,0); 
-            Mazo m1 = new Mazo(cartas.get(intAleatorio),3,0);
-            mazoAlternante.add(m1);
+            Mazo m3 = new Mazo(cartas.get(intAleatorio),3,0);
+            mazoAlternante.add(m3);
+            
             //imgCarta4.setImage(new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen())));
-            }
+            
         //IMAGEN CARTA 5
         aleatorio = new Random(System.currentTimeMillis());
         intAleatorio = aleatorio.nextInt(51);
-        while(num.contains(intAleatorio) == false ){
+        while(num.contains(intAleatorio) == true){
+                    aleatorio = new Random(System.currentTimeMillis());
+                    intAleatorio = aleatorio.nextInt(51);
+                }
             num.add(intAleatorio);
-            Image url = new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen()));
-            ImageView imgCarta5 = new ImageView(url);
+            Image url3 = new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen()));
+            ImageView imgCarta5 = new ImageView(url3);
             imgCarta5.setFitHeight(105);
             imgCarta5.setFitWidth(61);
             gpTablero.add(imgCarta5,0,1); 
-            Mazo m1 = new Mazo(cartas.get(intAleatorio),0,1);
-            mazoAlternante.add(m1);
+            Mazo m4 = new Mazo(cartas.get(intAleatorio),0,1);
+            mazoAlternante.add(m4);
+            
             //imgCarta5.setImage(new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen())));
-            }
+            
         //IMAGEN CARTA 6
         aleatorio = new Random(System.currentTimeMillis());
         intAleatorio = aleatorio.nextInt(50);
-        while(num.contains(intAleatorio) == false ){
+        while(num.contains(intAleatorio) == true){
+                    aleatorio = new Random(System.currentTimeMillis());
+                    intAleatorio = aleatorio.nextInt(50);
+                }
             num.add(intAleatorio);
-            Image url = new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen()));
-            ImageView imgCarta6 = new ImageView(url);
+            Image url4 = new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen()));
+            ImageView imgCarta6 = new ImageView(url4);
             imgCarta6.setFitHeight(105);
             imgCarta6.setFitWidth(61);
             gpTablero.add(imgCarta6,1,1);
-            Mazo m1 = new Mazo(cartas.get(intAleatorio),1,1);
-            mazoAlternante.add(m1);
+            Mazo m5 = new Mazo(cartas.get(intAleatorio),1,1);
+            mazoAlternante.add(m5);
+            
             //imgCarta6.setImage(new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen())));
-            }
+            
         //IMAGEN CARATA 7
         aleatorio = new Random(System.currentTimeMillis());
         intAleatorio = aleatorio.nextInt(49);
-        while(num.contains(intAleatorio) == false ){
+        while(num.contains(intAleatorio) == true){
+                    aleatorio = new Random(System.currentTimeMillis());
+                    intAleatorio = aleatorio.nextInt(49);
+                }
             num.add(intAleatorio);
-            Image url = new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen()));
-            ImageView imgCarta7 = new ImageView(url);
+            Image url5 = new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen()));
+            ImageView imgCarta7 = new ImageView(url5);
             imgCarta7.setFitHeight(105);
             imgCarta7.setFitWidth(61);
             gpTablero.add(imgCarta7,2,1);
-            Mazo m1 = new Mazo(cartas.get(intAleatorio),2,1);
-            mazoAlternante.add(m1);
+            Mazo m6 = new Mazo(cartas.get(intAleatorio),2,1);
+            mazoAlternante.add(m6);
+            
             //imgCarta7.setImage(new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen())));
-            }
+            
         //IMAGEN CARTA 8
         aleatorio = new Random(System.currentTimeMillis());
         intAleatorio = aleatorio.nextInt(48);
-        while(num.contains(intAleatorio) == false ){
+        while(num.contains(intAleatorio) == true){
+                    aleatorio = new Random(System.currentTimeMillis());
+                    intAleatorio = aleatorio.nextInt(48);
+                }
             num.add(intAleatorio);
-            Image url = new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen()));
-            ImageView imgCarta8 = new ImageView(url);
+            Image url6 = new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen()));
+            ImageView imgCarta8 = new ImageView(url6);
             imgCarta8.setFitHeight(105);
             imgCarta8.setFitWidth(61);
             gpTablero.add(imgCarta8,3,1);
-            Mazo m1 = new Mazo(cartas.get(intAleatorio),3,1);
-            mazoAlternante.add(m1);
+            Mazo m7 = new Mazo(cartas.get(intAleatorio),3,1);
+            mazoAlternante.add(m7);
+            
             //imgCarta8.setImage(new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen())));
-            }
+            
         //IMAGEN CARTA 9
         aleatorio = new Random(System.currentTimeMillis());
         intAleatorio = aleatorio.nextInt(47);
-        while(num.contains(intAleatorio) == false ){
+        while(num.contains(intAleatorio) == true){
+                    aleatorio = new Random(System.currentTimeMillis());
+                    intAleatorio = aleatorio.nextInt(47);
+                }
             num.add(intAleatorio);
-            Image url = new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen()));
-            ImageView imgCarta9 = new ImageView(url);
+            Image url7 = new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen()));
+            ImageView imgCarta9 = new ImageView(url7);
             imgCarta9.setFitHeight(105);
             imgCarta9.setFitWidth(61);
             gpTablero.add(imgCarta9,0,2);
-            Mazo m1 = new Mazo(cartas.get(intAleatorio),0,2);
-            mazoAlternante.add(m1);
+            Mazo m8 = new Mazo(cartas.get(intAleatorio),0,2);
+            mazoAlternante.add(m8);
+            
             //imgCarta9.setImage(new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen())));
-            }
+            
         //IMAGEN CARTA 10
         aleatorio = new Random(System.currentTimeMillis());
         intAleatorio = aleatorio.nextInt(46);
-        while(num.contains(intAleatorio) == false ){
+        while(num.contains(intAleatorio) == true){
+                    aleatorio = new Random(System.currentTimeMillis());
+                    intAleatorio = aleatorio.nextInt(46);
+                }
             num.add(intAleatorio);
-            Image url = new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen()));
-            ImageView imgCarta10 = new ImageView(url);
+            Image url8 = new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen()));
+            ImageView imgCarta10 = new ImageView(url8);
             imgCarta10.setFitHeight(105);
             imgCarta10.setFitWidth(61);
             gpTablero.add(imgCarta10,1,2);
-            Mazo m1 = new Mazo(cartas.get(intAleatorio),1,2);
-            mazoAlternante.add(m1);
+            Mazo m9 = new Mazo(cartas.get(intAleatorio),1,2);
+            mazoAlternante.add(m9);
+            
             //imgCarta10.setImage(new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen())));
-            }
+            
         //IMAGEN CARTA 11
         aleatorio = new Random(System.currentTimeMillis());
         intAleatorio = aleatorio.nextInt(46);
-        while(num.contains(intAleatorio) == false ){
+        while(num.contains(intAleatorio) == true){
+                    aleatorio = new Random(System.currentTimeMillis());
+                    intAleatorio = aleatorio.nextInt(46);
+                }
             num.add(intAleatorio);
-            Image url = new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen()));
-            ImageView imgCarta11 = new ImageView(url);
+            Image url9 = new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen()));
+            ImageView imgCarta11 = new ImageView(url9);
             imgCarta11.setFitHeight(105);
             imgCarta11.setFitWidth(61);
             gpTablero.add(imgCarta11,2,2);
-            Mazo m1 = new Mazo(cartas.get(intAleatorio),2,2);
-            mazoAlternante.add(m1);
+            Mazo m10 = new Mazo(cartas.get(intAleatorio),2,2);
+            mazoAlternante.add(m10);
+            
             //imgCarta11.setImage(new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen())));
-            }
+            
         //IMAGEN CARTA 12
         aleatorio = new Random(System.currentTimeMillis());
         intAleatorio = aleatorio.nextInt(45);
-        while(num.contains(intAleatorio) == false ){
+        while(num.contains(intAleatorio) == true){
+                    aleatorio = new Random(System.currentTimeMillis());
+                    intAleatorio = aleatorio.nextInt(45);
+                }
             num.add(intAleatorio);
-            Image url = new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen()));
-            ImageView imgCarta12 = new ImageView(url);
+            Image url10 = new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen()));
+            ImageView imgCarta12 = new ImageView(url10);
             imgCarta12.setFitHeight(105);
             imgCarta12.setFitWidth(61);
             gpTablero.add(imgCarta12,3,2);
-            Mazo m1 = new Mazo(cartas.get(intAleatorio),3,2);
-            mazoAlternante.add(m1);
+            Mazo m11 = new Mazo(cartas.get(intAleatorio),3,2);
+            mazoAlternante.add(m11);
+            
             //imgCarta12.setImage(new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen())));
-            }
+            
         //IMAGEN CARTA 13
         aleatorio = new Random(System.currentTimeMillis());
         intAleatorio = aleatorio.nextInt(44);
-        while(num.contains(intAleatorio) == false ){
+        while(num.contains(intAleatorio) == true){
+                    aleatorio = new Random(System.currentTimeMillis());
+                    intAleatorio = aleatorio.nextInt(53);
+                }
             num.add(intAleatorio);
-            Image url = new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen()));
-            ImageView imgCarta13 = new ImageView(url);
+            Image url11 = new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen()));
+            ImageView imgCarta13 = new ImageView(url11);
             imgCarta13.setFitHeight(105);
             imgCarta13.setFitWidth(61);
             gpTablero.add(imgCarta13,0,3);
-            Mazo m1 = new Mazo(cartas.get(intAleatorio),0,3);
-            mazoAlternante.add(m1);
+            Mazo m12 = new Mazo(cartas.get(intAleatorio),0,3);
+            mazoAlternante.add(m12);
+            
             //imgCarta13.setImage(new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen())));
-            }
+            
         //IMAGEN CARTA 14
         aleatorio = new Random(System.currentTimeMillis());
         intAleatorio = aleatorio.nextInt(43);
-        while(num.contains(intAleatorio) == false ){
+        while(num.contains(intAleatorio) == true){
+                    aleatorio = new Random(System.currentTimeMillis());
+                    intAleatorio = aleatorio.nextInt(43);
+                }
             num.add(intAleatorio);
-            Image url = new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen()));
-            ImageView imgCarta14 = new ImageView(url);
+            Image url12 = new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen()));
+            ImageView imgCarta14 = new ImageView(url12);
             imgCarta14.setFitHeight(105);
             imgCarta14.setFitWidth(61);
             gpTablero.add(imgCarta14,1,3);
-            Mazo m1 = new Mazo(cartas.get(intAleatorio),1,3);
-            mazoAlternante.add(m1);
+            Mazo m13 = new Mazo(cartas.get(intAleatorio),1,3);
+            mazoAlternante.add(m13);
+            
             //imgCarta14.setImage(new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen())));
-            }
+            
         //IMAGEN CARTA 15
         aleatorio = new Random(System.currentTimeMillis());
         intAleatorio = aleatorio.nextInt(42);
-        while(num.contains(intAleatorio) == false ){
+        while(num.contains(intAleatorio) == true){
+                    aleatorio = new Random(System.currentTimeMillis());
+                    intAleatorio = aleatorio.nextInt(42);
+                }
             num.add(intAleatorio);
-            Image url = new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen()));
-            ImageView imgCarta15 = new ImageView(url);
+            Image url13 = new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen()));
+            ImageView imgCarta15 = new ImageView(url13);
             imgCarta15.setFitHeight(105);
             imgCarta15.setFitWidth(61);
             gpTablero.add(imgCarta15,2,3);
-            Mazo m1 = new Mazo(cartas.get(intAleatorio),2,3);
-            mazoAlternante.add(m1);
+            Mazo m14 = new Mazo(cartas.get(intAleatorio),2,3);
+            mazoAlternante.add(m14);
+            
             //imgCarta15.setImage(new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen())));
-            }
+            
         //IMAGEN CARTA 16
         aleatorio = new Random(System.currentTimeMillis());
         intAleatorio = aleatorio.nextInt(41);
-        if (num.contains(intAleatorio) == false ){
+        while(num.contains(intAleatorio) == true){
+                    aleatorio = new Random(System.currentTimeMillis());
+                    intAleatorio = aleatorio.nextInt(41);
+                }
             num.add(intAleatorio);
-            Image url = new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen()));
-            ImageView imgCarta16 = new ImageView(url);
+            Image url14 = new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen()));
+            ImageView imgCarta16 = new ImageView(url14);
             imgCarta16.setFitHeight(105);
             imgCarta16.setFitWidth(61);
             gpTablero.add(imgCarta16,3,3);
-            Mazo m1 = new Mazo(cartas.get(intAleatorio),3,3);
-            mazoAlternante.add(m1);
+            Mazo m15 = new Mazo(cartas.get(intAleatorio),3,3);
+            mazoAlternante.add(m15);
+            
             //imgCarta16.setImage(new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen())));
-            }
+            
     }
     
     ////////////////////////
