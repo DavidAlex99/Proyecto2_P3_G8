@@ -623,31 +623,8 @@ public class VentanaJuegoController  {
     } 
     ////////////
     //esta se va a llamar cuando se aprete el boton 
-    public void VerificarCartaAlineacion(ActionEvent event){
-        /*for(Integer i: juego.getColumnasA2()){
-            System.out.println(i);
-        }
-        int correcta = 0;
-        int i = 0;
-        int i2 = 0;
-        //iterador para la alineacion
-        int f = filaAlineacion.get(i2);
-        int c = columnaAlineacion.get(i2);
-        while(i < 54){
-            if(f == mazoAlternante.get(i).getFila() && c == mazoAlternante.get(i).getColumna()){
-                correcta++;
-                i2++;
-                i=0;
-                if(correcta != 4){
-                mostrarAlerta("No tiene la alineacion completa", Alert.AlertType.ERROR); 
-            }else{
-                i++;
-            }
-        }}*/
-        /*if(correcta != 4){
-           mostrarAlerta("No tiene la alineacion completa", Alert.AlertType.ERROR); 
-        }*/
-        
+    public boolean VerificarCartaAlineacion(ActionEvent event){
+       
         
         int i = 0;
         while(i < 4){
@@ -657,13 +634,17 @@ public class VentanaJuegoController  {
             for(Mazo m:mazoAlternante){
                 if(f == m.getFila() && c == m.getColumna()){
                     i++;
-                }else{
-                    mostrarAlerta("No tiene la alineacion completa", Alert.AlertType.ERROR);  
-            }}
-    
+                    if(i == 3) return true;
+                }         
+            }
+            if (i!=3)
+                i = 5;
     }
+        mostrarAlerta("Alineacion no compatible",Alert.AlertType.ERROR);
+        return false;
         
     }
+
         
         ////////////////////
     public static void mostrarAlerta(String mensaje, Alert.AlertType e){
