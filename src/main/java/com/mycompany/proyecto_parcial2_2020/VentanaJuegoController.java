@@ -661,16 +661,21 @@ public class VentanaJuegoController  {
         
         ArrayList<Carta> cartas = tablero.getCartas();
         ArrayList<String> indice = Carta.cartasAleatoriasMazo;
+        String ur = "";
         Random r = new Random();
         int x = 54;
         int num = r.nextInt(x);
-        String ur = indice.get(num);
+        if(num < indice.size()){
+            ur = indice.get(num);
+        }    
         for(Carta c:cartas){
             if(c.getNumero().equalsIgnoreCase(ur)){
                 Image url = new Image(getClass().getResourceAsStream(c.getRutaImagen()));
                 imgCartaMazo.setImage(url);
-                indice.remove(num);
-                x--;
+                if(num <= indice.size()){
+                    indice.remove(num);
+                    x--;
+                }
                 //lenar en la lista de cartasmazo
                 cartaMazo.add(c);
                 
