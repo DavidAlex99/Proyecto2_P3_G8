@@ -42,10 +42,5 @@ public class Mazo {
     public Carta getCarta() {
         return carta;
     }
-    //public void barajar(){
-    //}
     
-    public void mostrarCarta(){
-        
-    }
 }

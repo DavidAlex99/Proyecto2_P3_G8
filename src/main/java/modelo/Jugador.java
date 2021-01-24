@@ -25,8 +25,6 @@ public class Jugador {
         return tablero;
     }
     
-    public void verificarTablero(){
-    }
-    //Completar metodo
+    
 }
 

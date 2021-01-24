@@ -24,7 +24,5 @@ public class CartaJuego {
         return marcada;
     }
     
-    public void marcarCarta(){
-        //COMPLETAR METODO!!!
-    }
+    
 }

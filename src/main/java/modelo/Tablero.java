@@ -27,7 +27,7 @@ public class Tablero {
    }
    
    public void lecturaArchivoCarta(){
-       //Completar Metodo
+       
        BufferedReader br = null;
        try{
            //Se lee el archivo y se toman los datos de numero y nombre de la carta

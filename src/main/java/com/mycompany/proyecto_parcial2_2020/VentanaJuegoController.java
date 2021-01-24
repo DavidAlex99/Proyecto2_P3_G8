@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.mycompany.proyecto_parcial2_2020;
 
 import java.io.BufferedReader;
@@ -84,11 +80,7 @@ public class VentanaJuegoController  {
     public ArrayList<Mazo> mazoAlternante = new ArrayList<>();
     
     
-    //public VentanaJuegoController(){
-      //  ArrayList<Integer> indices;
-        //ArrayList<Carta> cartas = new ArrayList<>();
-       // ArrayList<ImageView> panelesimages = new ArrayList<>();
-    //}
+    
     
     
     public void initialize() {
@@ -104,7 +96,7 @@ public class VentanaJuegoController  {
        Carta.listaTodasCartas();
        Carta.obtenerCartaAleatorioMazo();
        cargarImagenAlineacion();
-       //imgPosicionGanadora.setImage(new Image(getClass().getResourceAsStream(App.pathimagenes + "match.png")));
+       
        //llenarMazo();
        
        Thread t = new Thread(new Runnable() {
@@ -113,7 +105,7 @@ public class VentanaJuegoController  {
         while(true){
             try{
                 Platform.runLater(()-> llenarMazo());
-                Thread.sleep(1000);
+                Thread.sleep(3000);
             }catch(InterruptedException ex){
                 ex.printStackTrace();
             }
@@ -127,9 +119,7 @@ public class VentanaJuegoController  {
     
     //agregado 2001
     public void cargarImagenAlineacion(){
-        //ArrayList<Integer> filast = new ArrayList<>();
-        //ArrayList<Integer> columnast = new ArrayList<>();
-        //String url = juego.muestreoAlineacion(); 
+        
         juego = new Juego();
         //imgPosicionGanadora.setImage(new Image(getClass().getResourceAsStream(App.pathimagenes + "match.png")));
         System.out.println(juego.muestreoAlineacion());
@@ -141,15 +131,6 @@ public class VentanaJuegoController  {
         columnaAlineacion = juego.getColumnasA2();
         
         
-        
-        /*filaAlineacion.remove(4);
-        filaAlineacion.remove(5);
-        filaAlineacion.remove(6);
-        filaAlineacion.remove(7);
-        columnaAlineacion.remove(4);
-        columnaAlineacion.remove(5);
-        columnaAlineacion.remove(6);
-        columnaAlineacion.remove(7);*/
         //prueba
         for(Integer i:filaAlineacion){
             System.out.println(i);
@@ -157,60 +138,13 @@ public class VentanaJuegoController  {
         for(Integer i:columnaAlineacion){
             System.out.println(i);
         }
-        
-        
-        
-        
-        
-        //ArrayList<Integer> filast = juego.getFilasAlineacion();
-        //ArrayList<Integer> columnast = juego.getColumnasAlineacion();
-        /*CORREGIR
-        filaAlineacion.add(filast.get(0));
-        filaAlineacion.add(filast.get(1));
-        filaAlineacion.add(filast.get(2));
-        filaAlineacion.add(filast.get(3));
-        columnaAlineacion.add(columnast.get(0));
-        columnaAlineacion.add(columnast.get(1));
-        columnaAlineacion.add(columnast.get(2));
-        columnaAlineacion.add(columnast.get(3));
-        //prueba
-        for(Integer i:filaAlineacion){
-            System.out.println(i);
-        }
-        for(Integer i:columnaAlineacion){
-            System.out.println(i);
-        }*/
+   
     }
      
     
     //Tomamos los datos de la lista de cartas para llenar el tablero
     public void llenarTablero(){
-        /*ArrayList<Carta> cartas = tablero.getCartas();
-        int fila = 0;
-        int columna = 0;
-        ArrayList<Integer> num = new ArrayList<>();
-        Random aleatorio = new Random(System.currentTimeMillis());
-        for (int i = 0; i<25 ; i++) {
-            int intAleatorio = aleatorio.nextInt(55);
-            if (num.contains(intAleatorio) == false ){
-                num.add(intAleatorio);
-                Image url = new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen()));
-                ImageView img = new ImageView(url);
-                img.setFitHeight(120);
-                img.setFitWidth(90);
-                gpTablero.add(img,columna,fila);
-                fila++;
-                if(fila == 4){
-                    fila = 0;
-                    columna++;
-                }
-                 if(columna == 4)
-                    columna = 0;
-           
-
-            }
-        }*/ 
-        /////////////////////////
+    /////////////////////////
         
         ArrayList<Carta> cartas = tablero.getCartas();
         //int fila = 0;
@@ -220,51 +154,16 @@ public class VentanaJuegoController  {
         //for (int i = 0; i<25 ; i++) {
             int intAleatorio = aleatorio.nextInt(55);
             if (num.contains(intAleatorio) == false ){
-                //StackPane stcFrijol = new StackPane();
-                //Pane paneFrijol = new Pane();
                 num.add(intAleatorio);
                 Image url = new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen()));
                 ImageView imgCarta1 = new ImageView(url);
                 imgCarta1.setFitHeight(105);
                 imgCarta1.setFitWidth(61);
-                ////////////
-                //Image url00 = new Image(getClass().getResourceAsStream(App.pathimagenes + "frejol.png"));
-                //ImageView imgCarta00 = new ImageView(url00);
-                //imgCarta00.setFitHeight(40);
-                //imgCarta00.setFitWidth(25);
-                //paneFrijol.getChildren().add(imgCarta00);
-                //stcFrijol.getChildren().add(paneFrijol);
-                gpTablero.add(imgCarta1,0,0);  
-                //gpTablero.add(stcFrijol,0,0);
-                /////////////////////////////
                 
-                /*prueba poniendo frejol
-                Image url00 = new Image(getClass().getResourceAsStream(App.pathimagenes + "frejol.png"));
-                ImageView imgCarta00 = new ImageView(url00);
-                imgCarta00.setFitHeight(40);
-                imgCarta00.setFitWidth(25);
-                gpTablero.add(imgCarta00,0,0);*/  
-                ////////////////////////////
+                gpTablero.add(imgCarta1,0,0);  
+      
                 Mazo m1 = new Mazo(cartas.get(intAleatorio),0,0);
                 mazoAlternante.add(m1);
-                
-                /*Image url = new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen()));
-                ImageView img = new ImageView(url);
-                
-                while(num.contains(intAleatorio) == true){
-                    aleatorio = new Random(System.currentTimeMillis());
-                    intAleatorio = aleatorio.nextInt(54);
-                }
-                img.setFitHeight(120);
-                img.setFitWidth(90);
-                gpTablero.add(img,columna,fila);
-                fila++;
-                if(fila == 4){
-                    fila = 0;
-                    columna++;
-                }
-                 if(columna == 4)
-                    columna = 0;*/
             }
         aleatorio = new Random(System.currentTimeMillis());
         intAleatorio = aleatorio.nextInt(54);
@@ -539,8 +438,7 @@ public class VentanaJuegoController  {
     
     ////////////////////////
         public void marcarCarta1(javafx.scene.input.MouseEvent event) {
-        //StackPane stcfrijol = new StackPane();
-        //Pane pnfrijol = new Pane();
+        
         Node clickedNode = event.getPickResult().getIntersectedNode();
         int colIndex = 0;
         int rowIndex = 0;
@@ -555,24 +453,11 @@ public class VentanaJuegoController  {
             
     }
         
-        //ponerFrejol(colIndex, rowIndex);
-        //marcarCarta(colIndex, rowIndex);
         
         //PRUEBA
         for (Mazo m1: mazoAlternante){
             System.out.println("La fila es " + m1.getColumna());
-            
-            
-        /*Node result = null;
-        ObservableList<Node> childrens = gpTablero.getChildren();
-
-        for (Node node : childrens) {
-        if(gpTablero.getRowIndex(node) == rowIndex && gpTablero.getColumnIndex(node) == colIndex) {
-            result = node;
-            System.out.println(result.getClass());
-            break;
-            
-        }*/
+          
         
         }
         
@@ -588,11 +473,7 @@ public class VentanaJuegoController  {
         paneFrijol.getChildren().add(imgCarta00);
         stcFrijol.getChildren().add(paneFrijol);
         gpTablero.add(stcFrijol,colIndex, rowIndex);
-        
 
-        //paneFrijol.getChildren().add(imgCarta00);
-        //gpTablero.add(paneFrijol,0,0);
-        //gpTablero.add(pnfrijol,0,0);
     }    
         
     //verifiacion que la carta que se clikea sea la misma del mazo
@@ -736,7 +617,7 @@ public class VentanaJuegoController  {
            ArrayList<Carta> cartas = tablero.getCartas();
         int fila = 0;
         int columna = 0;
-           //System.out.println(cartas.get(0).getRutaImagen());
+          
         ArrayList<Integer> num = new ArrayList<>();
         Random aleatorio = new Random(System.currentTimeMillis());
         for (int i = 0; i<25 ; i++) {

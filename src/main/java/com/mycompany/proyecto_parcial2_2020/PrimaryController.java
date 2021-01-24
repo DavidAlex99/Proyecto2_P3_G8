@@ -39,6 +39,7 @@ public class PrimaryController implements Initializable {
     }    
     
     @FXML
+    //Se dirige a la ventana donde el usuario guardara su nombre
     private void nuevoJuego(ActionEvent event) {
         try{
             App.setRoot("Jugador");
@@ -49,6 +50,7 @@ public class PrimaryController implements Initializable {
     }
 
     @FXML
+    //Dirige a la ventana donde se mostrara los reportes de los juegos realizados
     private void reporte(ActionEvent event) {
         try{
             App.setRoot("reporte");
@@ -57,6 +59,7 @@ public class PrimaryController implements Initializable {
         }
     }
     @FXML
+    //Mostrara las opciones de configuracion del juego
     private void configuraciones(ActionEvent event) {
         try{
             App.setRoot("configuraciones");

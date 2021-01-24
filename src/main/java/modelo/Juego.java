@@ -77,9 +77,7 @@ public class Juego {
         return columnasAlineacion2;
     }
     
-    
-    public void verificarJuego(){
-    }
+   
     //COMPLETAR METODO!!!
     //agregado 2 
     //metodo para la alineacion. llamar metodo en elintialize

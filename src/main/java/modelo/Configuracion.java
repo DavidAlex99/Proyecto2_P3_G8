@@ -39,7 +39,7 @@ public class Configuracion implements Serializable {
     
    public void lecturaDatos(){
       
-        //recupera del archivo serializado 
+        //recupera los datos escogidos por el jugador del archivo serializado 
         try(ObjectInputStream in = new ObjectInputStream(new FileInputStream(App.pathDatos))){
           
             datos = ((ArrayList<Configuracion>)in.readObject()).get(0);

@@ -54,15 +54,12 @@ public class ConfiguracionesController implements Initializable {
     @FXML
     private void botonAceptar(ActionEvent event) {
         
-        
-        //System.out.println("El usuario jugara con " +cbCantidad.getValue()+ " oponentes");
-        //System.out.println("El usuario escogio el tipo de juego " +cbVisibilidad.getValue());
+      //Toma los valores escogidos en el comboBox
         Configuracion configuracion = new Configuracion(Integer.parseInt(cbCantidad.getValue()), cbVisibilidad.getValue());
         
         
-        //System.out.println(configuracion.getOponentes()+configuracion.getVisible());
-        //Creamos un nuevo archivo en donde se guardaran las configuraciones 
-        //escogidas por el usuario
+         
+        //Crea el archivo donde se guardaran los datos escogidos por el usuario
         File file =new File("visibilidad.ser");
         
         try {
