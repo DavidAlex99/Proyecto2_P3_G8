@@ -10,5 +10,5 @@ package modelo;
  * @author cholo
  */
 public enum Alineacion {
-    ESQUINA, FILA, COLUMNA;
+    ESQUINA,FILA,COLUMNA;
 }

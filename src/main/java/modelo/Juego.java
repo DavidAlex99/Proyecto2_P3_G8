@@ -90,7 +90,7 @@ public class Juego {
         alineaciones.add(Alineacion.FILA);
         alineaciones.add(Alineacion.COLUMNA);
         alineaciones.add(Alineacion.ESQUINA);
-        Random x = new Random();
+        Random x = new Random(System.currentTimeMillis());
         int ind = x.nextInt(3);
         //alineacion de la lista  alineacion con el random
         Alineacion p = alineaciones.get(ind);

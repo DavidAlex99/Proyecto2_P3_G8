@@ -351,7 +351,7 @@ public class VentanaJuegoController  {
             imgCarta6.setFitWidth(61);
             gpTablero.add(imgCarta6,1,1);
             Mazo m5 = new Mazo(cartas.get(intAleatorio),1,1);
-            mazoAlternante.add(m5);
+            mazoAlternante.add(m5);     
             
             //imgCarta6.setImage(new Image(getClass().getResourceAsStream(cartas.get(intAleatorio).getRutaImagen())));
             
@@ -551,9 +551,11 @@ public class VentanaJuegoController  {
             System.out.println("Mouse clicked cell: " + colIndex + " And: " + rowIndex);
             filasMarcadas.add(rowIndex);
             columnasMarcadas.add(colIndex);
+            VerificarCartaMazo(colIndex, rowIndex);
             
     }
-        ponerFrejol(colIndex, rowIndex);
+        
+        //ponerFrejol(colIndex, rowIndex);
         //marcarCarta(colIndex, rowIndex);
         
         //PRUEBA
@@ -608,6 +610,7 @@ public class VentanaJuegoController  {
                         //filasMarcadas.add(rowIndex);
                         //columnasMarcadas.add(colIndex);
                         System.out.println("La fila es " + filasMarcadas);
+                        ponerFrejol(colIndex, rowIndex);
                         
                                 
                     }
@@ -619,25 +622,47 @@ public class VentanaJuegoController  {
         }
     } 
     ////////////
-    //esta se va a llamar cuando se aprete el boton
+    //esta se va a llamar cuando se aprete el boton 
     public void VerificarCartaAlineacion(ActionEvent event){
-        for(Integer i: juego.getColumnasA2()){
+        /*for(Integer i: juego.getColumnasA2()){
             System.out.println(i);
         }
+        int correcta = 0;
+        int i = 0;
+        int i2 = 0;
+        //iterador para la alineacion
+        int f = filaAlineacion.get(i2);
+        int c = columnaAlineacion.get(i2);
+        while(i < 54){
+            if(f == mazoAlternante.get(i).getFila() && c == mazoAlternante.get(i).getColumna()){
+                correcta++;
+                i2++;
+                i=0;
+                if(correcta != 4){
+                mostrarAlerta("No tiene la alineacion completa", Alert.AlertType.ERROR); 
+            }else{
+                i++;
+            }
+        }}*/
+        /*if(correcta != 4){
+           mostrarAlerta("No tiene la alineacion completa", Alert.AlertType.ERROR); 
+        }*/
+        
+        
         int i = 0;
         while(i < 4){
             int f = filaAlineacion.get(i);
             int c = columnaAlineacion.get(i);
+            //for no concida con la alineacion
             for(Mazo m:mazoAlternante){
                 if(f == m.getFila() && c == m.getColumna()){
                     i++;
                 }else{
-                    mostrarAlerta("No tiene la alineacion completa", Alert.AlertType.ERROR);
-                    
-            }
-        }
+                    mostrarAlerta("No tiene la alineacion completa", Alert.AlertType.ERROR);  
+            }}
     
     }
+        
     }
         
         ////////////////////
@@ -769,11 +794,6 @@ public class VentanaJuegoController  {
         }catch(Exception e){
             
         }
-        
     }
 
-    
 }
-
-
-
